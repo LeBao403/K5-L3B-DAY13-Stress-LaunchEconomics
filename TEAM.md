@@ -2,19 +2,18 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
+- Tên nhóm: Stress
 - Lớp: L3B
-- Repo nhóm: `K5-L3A-DAY13-TenNhom-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Repo nhóm: `K5-L3B-DAY13-Stress-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
+- URL repo, nhánh nộp, commit chốt: https://github.com/LeBao403/K5-L3B-DAY13-Stress-LaunchEconomics · nhánh `main` · (điền commit chốt khi hoàn tất)
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Phạm Thanh An | 2A202603913 |       |        | Người viết code, người kiểm số |
-|   2 |        |      |       |        |         |
-|   3 |        |      |       |        |         |
-|   4 |        |      |       |        |         |
+|   1 |        |      |       |        | Người viết code, người kiểm số (Người 1) |
+|   2 |        |      |       |        | Người gắn nhãn 1 (Người 2) |
+|   3 |        |      |       |        | Người gắn nhãn 2, kiêm giữ hồ sơ (Người 3) |
 
 Bốn vai của lab:
 
@@ -37,24 +36,48 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## Phạm Thanh An — 2A202603913
-
-Báo cáo cá nhân: `report/team/2A202603913_PhamThanhAn.md`.
+## Người 1 (HoVaTen-MSSV)
 
 ### Phần việc phụ trách
 
-- Nhiệm vụ A: ba hàm A1, `mo_hinh`, bảng A2, A3, A4.
-- Nhiệm vụ B1 đến B3: chín kịch bản, một cặp yếu tố, ba giới hạn chạy lại.
-- Mục rủi ro kinh tế trong `report/team/chi_so.md` và dòng 1, 2, 3, 7 trong `report/team/ho_so_launch_v0.md`.
+- Nhiệm vụ A (mô hình chi phí), B1 đến B3, E2 (rủi ro kinh tế), mục 1, 2, 3, 7 trong `ho_so_launch_v0.md`.
 
 ### Đóng góp cụ thể
 
-- Viết và chạy `src/lab13.py`. Ba phép thử in ĐẠT: 1,20 · 1,25 · 1,25.
-- Điền A2–A4 và B1–B3 vào `report/team/bang_chi_phi.md`. Mục B4 để Người 3 điền.
-- Tính tay số việc thành công và tiền token để đối chiếu với `mo_hinh` (cách tính ở báo cáo cá nhân).
+- (Người 1 điền sau khi hoàn thành)
 
 ### Bằng chứng
 
-- `python lab13.py` trong `src/`: chi phí mỗi việc thành công 4.472 đ (simulated), 978 việc thành công, hoá đơn token + tool 274,7 đ/yêu cầu.
-- Giới hạn rẻ nhất cho cả hệ thống là 2 lần: 6.901.220 đ (simulated).
-- Chi phí cả hệ thống trên mỗi yêu cầu: 5.865 đ = 0,49× mức 12.000 đ (simulated).
+- (Người 1 điền sau khi hoàn thành)
+
+## Người 2 (HoVaTen-MSSV)
+
+### Phần việc phụ trách
+
+- Nhiệm vụ D (`pilot_plan.yaml`), E1 (`chi_so.md`), gắn nhãn độc lập 20 ca lỗi, mục 4, 6 trong `ho_so_launch_v0.md`.
+
+### Đóng góp cụ thể
+
+- (Người 2 điền sau khi hoàn thành)
+
+### Bằng chứng
+
+- (Người 2 điền sau khi hoàn thành)
+
+## Người 3 (HoVaTen-MSSV)
+
+### Phần việc phụ trách
+
+- Người gắn nhãn 2, kiêm giữ hồ sơ: Nhiệm vụ B4 (tính từ dữ liệu thô), Nhiệm vụ C (gắn nhãn độc lập 20 ca lỗi và bảng khắc phục 5 ca), dựng khung và tổng hợp `ho_so_launch_v0.md`, `group_report.md`, `phieu_cham.md`, `TEAM.md`.
+
+### Đóng góp cụ thể
+
+- Viết `src/nhap_nguoi3.py` tính chi phí kịch bản xem lại 100% phạm vi `noi_dia` + `hang_nang` (982 yêu cầu, 900 việc thành công) và độ nhạy theo `phut_lam_lai_simulated`, điền mục B4 trong `report/team/bang_chi_phi.md`.
+- Gắn nhãn độc lập 20 ca lỗi theo 5 loại Google PAIR tại `report/team/nhan_nguoi3.md`; lập bảng khắc phục 5 ca đại diện (ca 9, 7, 18, 4, 17) với cách phát hiện đo được và chức danh phụ trách trong `report/team/bang_loi.md`.
+- Dựng khung `TEAM.md`, `report/team/group_report.md`, điền mục 5 và khung đề xuất `Go có điều kiện` trong `report/team/ho_so_launch_v0.md`.
+
+### Bằng chứng
+
+- File code nháp: `src/nhap_nguoi3.py`
+- File nhãn độc lập: `report/team/nhan_nguoi3.md`
+- Hồ sơ đã cập nhật: `report/team/bang_chi_phi.md` (mục B4), `report/team/bang_loi.md`, `report/team/ho_so_launch_v0.md`, `report/team/group_report.md`, `TEAM.md`.
