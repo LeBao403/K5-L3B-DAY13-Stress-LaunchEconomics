@@ -38,7 +38,7 @@
 - Sử dụng trợ lý AI (Antigravity / Gemini) để hỗ trợ viết script `src/nhap_nguoi3.py`, rà soát công thức B4, kiểm tra đối chiếu nhãn và kiểm tra quy tắc hồ sơ.
 - **Cách tự kiểm tra kết quả:**
   - Chạy trực tiếp `python src/nhap_nguoi3.py` và `cd src && python lab13.py` để xác nhận toàn bộ số liệu B4 và mô hình chi phí khớp dữ liệu thô trong `logix_runs.csv` và `logix_requests.csv` (`keep_default_na=False`).
-  - Kiểm tra `yaml.safe_load` cho `report/team/pilot_plan.yaml` và kiểm tra không có từ `production` trong 6 file hồ sơ tại `report/team/`.
+  - Kiểm tra `yaml.safe_load` cho `report/team/pilot_plan.yaml` và kiểm tra không có từ cấm theo quy tắc 5 của lab trong 6 file hồ sơ tại `report/team/`.
   - Tự đối chiếu từng ca trong 20 ca lỗi theo quy tắc nguyên nhân gốc trước khi so với `nhan_nguoi2.md`.
 
 ## 6. Tự đánh giá

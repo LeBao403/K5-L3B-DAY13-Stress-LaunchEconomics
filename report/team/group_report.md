@@ -43,8 +43,6 @@ Chi tiết đóng góp của từng thành viên nằm trong `TEAM.md`.
 
 - Thời gian xem lại và làm lại hiện tại vẫn là dữ liệu `simulated`; cần thu thập đầy đủ sự kiện đo thật (`staff_review_decision`, `staff_rework_completed`) gắn `trace_id` trong tuần 1 của pilot.
 - Cần sớm triển khai kiểm tra mẫu định kỳ (`audit_sample_checked`) để phát hiện các lỗi ngầm như sai bảng giá trong bộ nhớ đệm hoặc lỗi thừa chi phí token theo depot.
-- Tiếp tục cập nhật bảng đồng thuận nhãn sau khi ghép bộ nhãn của Người 2 và hoàn thiện số liệu chi phí/cỡ mẫu từ Người 1 và Người 2 trước giờ duyệt chéo 17:00.
-
 - Mẫu 1.200 yêu cầu chỉ đến từ 20 nhân viên ở 6 depot, trong khi pilot dùng cả 40 nhân viên (20 + 20) và không còn người dự phòng; nếu một người nghỉ thì chỉ còn 19 cụm ở một nhóm.
 
 ## 8. Tài liệu tham khảo
