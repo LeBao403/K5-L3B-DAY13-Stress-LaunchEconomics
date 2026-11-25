@@ -6,13 +6,13 @@ Nhóm: ... · Lớp: ...
 
 | Mục | Con số chính | Trạng thái | Người phụ trách |
 | --- | --- | --- | --- |
-| 1 · Chi phí mỗi việc thành công | ... | ... | ... |
-| 2 · Ba yếu tố nhạy nhất | ... | ... | ... |
-| 3 · So với nhân viên tự làm | ... | ... | ... |
+| 1 · Chi phí mỗi việc thành công | 4.472 đ/việc (simulated), gấp 16,3 lần hoá đơn 274,7 đ; 978 việc thành công | Giả lập | PM trợ lý hoàn phí |
+| 2 · Ba yếu tố nhạy nhất | Làm lại +51,8% (6.787 đ); xem lại +40,7% (6.292 đ); lương +23,1% (5.506 đ). Gốc 4.472 đ (simulated) | Giả lập | PM trợ lý hoàn phí |
+| 3 · So với nhân viên tự làm | Chi phí cả hệ thống 5.865 đ/yêu cầu = 0,49× của 12.000 đ (simulated): (4.373.585 + 222 × 12.000) / 1.200 | Giả lập | PM trợ lý hoàn phí |
 | 4 · Chỉ số chính, chỉ số dùng, chỉ số an toàn | ... | ... | ... |
 | 5 · Bảng lỗi và cách khắc phục | ... | ... | ... |
 | 6 · Pilot plan | ... | ... | ... |
-| 7 · Rủi ro kinh tế | ... | ... | ... |
+| 7 · Rủi ro kinh tế | Làm lại gấp đôi lên 6.787 đ; xem lại 100% còn 11.743 đ (0,98×); nửa khối lượng thì cố định 2.370 đ/việc (simulated) | Giả lập | PM trợ lý hoàn phí |
 
 **Đề xuất:** Go · Go có điều kiện · No-go (giữ một). Go có điều kiện: ghi từng điều kiện, người phụ trách, ngày kiểm tra. No-go: ghi việc phải làm để quay lại cổng.
 
