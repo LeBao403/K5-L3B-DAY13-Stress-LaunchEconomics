@@ -36,7 +36,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## Người 1 (HoVaTen-MSSV)
+## Người 1 (Phạm Thanh An - 2A202603913)
 
 ### Phần việc phụ trách
 
@@ -44,11 +44,15 @@ Sao chép mục dưới đây cho từng thành viên.
 
 ### Đóng góp cụ thể
 
-- (Người 1 điền sau khi hoàn thành)
+- Viết `src/lab13.py`: ba hàm A1, `mo_hinh`, bảng A2–A4 và các kịch bản B1–B3. Ba phép thử in ĐẠT (1,20 · 1,25 · 1,25). Chi phí mỗi việc thành công 4.472 đ (simulated), 978 việc thành công; giới hạn rẻ nhất cho cả hệ thống là 2 lần (6.901.220 đ, simulated).
+- Điền A2–A4 và B1–B3 vào `report/team/bang_chi_phi.md`. Mục B4 do Người 3 điền.
+- Điền ba dòng rủi ro kinh tế trong `report/team/chi_so.md` và dòng 1, 2, 3, 7 trong `report/team/ho_so_launch_v0.md` (trạng thái Giả lập). Dòng 3 dùng chi phí cả hệ thống 5.865 đ/yêu cầu = 0,49× mức 12.000 đ (simulated).
+- Tính tay để đối chiếu: 978 `thanh_cong` + 148 `chuyen_nhan_vien` + 74 `lam_lai` = 1.200; tiền token 245.585 đ; tool 5.600 × 15 = 84.000 đ.
 
 ### Bằng chứng
 
-- (Người 1 điền sau khi hoàn thành)
+- Commit `5e10457` (mô hình chi phí), `d6a228e` (độ nhạy B1–B3), `3a4b180` (báo cáo cá nhân).
+- File: `src/lab13.py`, `report/team/bang_chi_phi.md` (A và B1–B3), mục E2 của `report/team/chi_so.md`, dòng 1, 2, 3, 7 của `report/team/ho_so_launch_v0.md`, `report/team/2A202603913_PhamThanhAn.md`.
 
 ## Người 2 (Lê Quân Bảo - 2A202603888)
 
