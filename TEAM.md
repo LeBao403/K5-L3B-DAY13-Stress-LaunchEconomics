@@ -11,9 +11,9 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        | Người viết code, người kiểm số (Người 1) |
-|   2 | Lê Quân Bảo | 2A202603888 |       | LeBao403 | Người gắn nhãn 1 (Người 2) |
-|   3 | Nguyễn Văn Hậu | 2A202603932 | nguyenhau230303@gmail.com | | Người gắn nhãn 2, kiêm giữ hồ sơ (Người 3) |
+|   1 | Phạm Thanh An       | 2A202603913     | 26ai.anpt3@vinuni.edu.vn      | thanhanbk02       | Người viết code, người kiểm số (Người 1) |
+|   2 | Lê Quân Bảo | 2A202603888 | 26ai.baolq2@vinuni.edu.vn      | LeBao403 | Người gắn nhãn 1 (Người 2) |
+|   3 | Nguyễn Văn Hậu | 2A202603932 | 26ai.haunv@vinuni.edu.vn | common-maker | Người gắn nhãn 2, kiêm giữ hồ sơ (Người 3) |
 
 Bốn vai của lab:
 
