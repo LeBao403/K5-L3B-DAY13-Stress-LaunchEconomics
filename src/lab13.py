@@ -119,6 +119,34 @@ if __name__ == '__main__':
               f'cps+co_dinh={tong_viec:,.0f}  so_voi_12000={tong_viec / BASELINE:.2f}x  '
               f'cps_pham_vi={kq_pv["cps"]:,.0f}  tong_pv={kq_pv["tong"]:,.0f}')
     # TODO CP2 · Nhiệm vụ B: đổi từng yếu tố, ghi vào bảng độ nhạy.
+    print('\nB1 · do nhay')
+    kich_ban = {
+        'Gia token gap doi': dict(gia_vao=52, gia_ra=260),
+        'Gia token giam mot nua': dict(gia_vao=13, gia_ra=65),
+        'Xem lai gap doi': dict(he_so_xem_lai=2),
+        'Xem lai giam mot nua': dict(he_so_xem_lai=0.5),
+        'Lam lai gap doi': dict(he_so_lam_lai=2),
+        'Lam lai giam mot nua': dict(he_so_lam_lai=0.5),
+        'Luong tang 25%': dict(luong_phut=2500),
+        'Toi da 2 lan chay': dict(max_lan_chay=2),
+        'Chi 1 lan chay': dict(max_lan_chay=1),
+    }
+    goc = mo_hinh(runs, reqs)['cps']
+    for ten, kw in kich_ban.items():
+        cps = mo_hinh(runs, reqs, **kw)['cps']
+        print(f'{ten:24s} {cps:8,.0f} {(cps / goc - 1) * 100:+6.1f}%')
+
+    cap = mo_hinh(runs, reqs, gia_vao=52, gia_ra=260, he_so_xem_lai=2)
+    print(f'\nB2 · token x2 va xem lai x2  {cap["cps"]:8,.0f} {(cap["cps"] / goc - 1) * 100:+6.1f}%')
+
+    print('\nB3 · gioi han chay lai')
+    for gioi_han in (1, 2, 3):
+        kw = {} if gioi_han == 3 else dict(max_lan_chay=gioi_han)
+        kq = mo_hinh(runs, reqs, **kw)
+        khong_thanh_cong = len(reqs) - kq['thanh_cong']
+        he_thong = kq['tong'] + BASELINE * khong_thanh_cong
+        print(f'{gioi_han} lan  tro_ly={kq["tong"]:12,.0f}  khong_tc={khong_thanh_cong:4d}  '
+              f'he_thong={he_thong:12,.0f}  cps={kq["cps"]:8,.0f}')
     # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
     #   from statsmodels.stats.proportion import proportion_effectsize
     #   from statsmodels.stats.power import NormalIndPower
