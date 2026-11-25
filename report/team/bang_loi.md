@@ -4,7 +4,7 @@
 
 ## Hai bộ nhãn độc lập
 
-Người gắn nhãn 1: Lê Quân Bảo (`nhan_nguoi2.md`) · Người gắn nhãn 2: Người 3 (`nhan_nguoi3.md`) (gắn độc lập trong 8 phút, không trao đổi)
+Người gắn nhãn 1: Lê Quân Bảo (`nhan_nguoi2.md`) · Người gắn nhãn 2: Người 3 (`nhan_nguoi3.md`) . Mỗi người ghi nhãn vào một file riêng. Lưu ý: trước khi gắn nhãn, Người 2 đã nhìn thấy số ca theo từng loại trong bản nháp hồ sơ của Người 3, nên hai bộ nhãn không hoàn toàn độc lập.
 
 | Ca | Nhãn người 1 | Nhãn người 2 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |

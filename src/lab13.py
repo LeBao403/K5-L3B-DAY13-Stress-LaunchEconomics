@@ -4,7 +4,11 @@ Không cần khoá API. Điền các chỗ ghi VIẾT Ở ĐÂY (đánh dấu TO
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
 import math
+from statistics import NormalDist
+
 import pandas as pd
+from statsmodels.stats.power import NormalIndPower
+from statsmodels.stats.proportion import proportion_effectsize
 
 # Bảng giá GIẢ ĐỊNH của lab (không phải giá thật của nhà cung cấp nào)
 GIA_VAO = 26        # đồng cho 1.000 token đầu vào
@@ -80,6 +84,68 @@ def mo_hinh(runs, reqs, gia_vao=26, gia_ra=130, gia_tool=15, luong_phut=2000,
     )
 
 
+# ---------- Nhiệm vụ D1 · Cỡ mẫu cho pilot ----------
+BASELINE_CHINH = 0.70   # chỉ số chính hiện tại
+ALPHA = 0.05
+POWER = 0.80
+ICC = 0.02
+SO_NHAN_VIEN = 40
+
+
+def co_mau(p1, p2, alpha=ALPHA, power=POWER):
+    """Cỡ mẫu mỗi nhóm khi so hai tỉ lệ (chia theo yêu cầu)."""
+    za = NormalDist().inv_cdf(1 - alpha / 2)
+    zb = NormalDist().inv_cdf(power)
+    pb = (p1 + p2) / 2
+    tu = za * math.sqrt(2 * pb * (1 - pb)) + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))
+    return math.ceil(tu ** 2 / (p2 - p1) ** 2)
+
+
+def he_so_thiet_ke(m, icc=ICC):
+    return 1 + (m - 1) * icc
+
+
+def mau_hieu_dung(c, m, icc=ICC):
+    """Cỡ mẫu hiệu dụng khi chia theo cụm: c cụm, mỗi cụm m yêu cầu."""
+    return c * m / he_so_thiet_ke(m, icc)
+
+
+def m_toi_thieu(c, n_can, icc=ICC):
+    """Số yêu cầu tối thiểu mỗi cụm để c cụm đạt cỡ mẫu hiệu dụng n_can.
+    Giải c*m / (1 + (m-1)*icc) >= n_can."""
+    if c / icc <= n_can:
+        return None
+    return math.ceil(n_can * (1 - icc) / (c - n_can * icc))
+
+
+def in_bang_d1():
+    # a) chia theo yêu cầu
+    n5 = co_mau(BASELINE_CHINH, BASELINE_CHINH + 0.05)
+    print(f'D1a  chia theo yêu cầu, +5 điểm: {n5:,} yêu cầu mỗi nhóm')
+    # b) chia theo nhân viên, m = 75
+    m = 75
+    de = he_so_thiet_ke(m)
+    n_cum = math.ceil(n5 * de)
+    so_nv = math.ceil(n_cum / m)
+    print(f'D1b  theo nhân viên, m={m}: DE={de:.2f}, {n_cum:,} yêu cầu mỗi nhóm '
+          f'= {so_nv} người mỗi nhóm, tổng {2 * so_nv} (có {SO_NHAN_VIEN} nhân viên)')
+    # c) 20 nhân viên mỗi nhóm
+    print(f'D1c  20 nhân viên mỗi nhóm: hiệu dụng tối đa c/ICC = {20 / ICC:,.0f} '
+          f'(cần {n5:,}) -> {"đạt" if 20 / ICC >= n5 else "không đạt"}')
+    # d) 6 depot mỗi nhóm
+    print(f'D1d  6 depot mỗi nhóm: hiệu dụng tối đa = {6 / ICC:,.0f}')
+    # e) mức chênh 6 điểm, 20 nhân viên mỗi nhóm
+    n6 = co_mau(BASELINE_CHINH, BASELINE_CHINH + 0.06)
+    me = m_toi_thieu(20, n6)
+    print(f'D1e  mức chênh 6 điểm: {n6:,} mỗi nhóm; 20 nhân viên cần m >= {me} yêu cầu mỗi người '
+          f'(DE={he_so_thiet_ke(me):.2f}, hiệu dụng={mau_hieu_dung(20, me):,.0f})')
+    # power nếu tác động thật chỉ 5 điểm mà thiết kế theo 6 điểm
+    es = proportion_effectsize(BASELINE_CHINH + 0.05, BASELINE_CHINH)
+    pw = NormalIndPower().power(effect_size=es, nobs1=n6, alpha=ALPHA, ratio=1.0)
+    print(f'     power thật nếu tác động chỉ 5 điểm, n={n6}: {pw:.2f}')
+    return dict(n5=n5, de_b=de, n_cum=n_cum, so_nv=so_nv, n6=n6, m_e=me, power5=pw)
+
+
 if __name__ == '__main__':
     runs = pd.read_csv('logix_runs.csv')
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
@@ -147,6 +213,8 @@ if __name__ == '__main__':
         he_thong = kq['tong'] + BASELINE * khong_thanh_cong
         print(f'{gioi_han} lan  tro_ly={kq["tong"]:12,.0f}  khong_tc={khong_thanh_cong:4d}  '
               f'he_thong={he_thong:12,.0f}  cps={kq["cps"]:8,.0f}')
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    print('\nD1 · cỡ mẫu pilot (baseline 0,70; alpha 0,05; power 0,8; ICC 0,02)')
+    in_bang_d1()
+    tl = reqs.mo_lai_trong_7_ngay.mean()
+    pv = reqs[reqs.loai.isin(['noi_dia', 'hang_nang'])]
+    print(f'mo_lai_trong_7_ngay: toàn mẫu {tl:.2%}; noi_dia + hang_nang {pv.mo_lai_trong_7_ngay.mean():.2%}')

@@ -32,6 +32,7 @@ Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các fil
 
 - **Rủi ro thiên lệch từ dữ liệu giả lập:** Hai cột `phut_xem_lai_simulated` và `phut_lam_lai_simulated` là số giả lập; đặc biệt thời gian làm lại thực tế trong dữ liệu (`15,30 phút/ca` toàn mẫu, `16,25 phút/ca` trong phạm vi `noi_dia` + `hang_nang`) cao hơn mức giả định 9 phút của đề bài, làm thay đổi kết luận B4 từ 0,98× sang 1,03×–1,04×. **Cách xử lý:** Gắn nhãn `simulated` ở mọi số suy ra, báo cáo cả hai kịch bản và đưa yêu cầu đo thời gian thật sau tuần 1 vào điều kiện Go.
 - **Phối hợp song song 3 thành viên tránh xung đột git:** Phân tách file sở hữu và file nháp riêng (`src/nhap_nguoi3.py`, `report/team/nhan_nguoi3.md`), giữ nguyên các mục của Người 1 và Người 2, tuân thủ `git pull --rebase` trước khi đẩy bài.
+- **Hai bộ nhãn lỗi chưa hoàn toàn độc lập:** trước khi gắn nhãn, Người 2 đã nhìn thấy số ca theo từng loại trong bản nháp hồ sơ của Người 3. **Cách xử lý:** ghi rõ điều này trong `bang_loi.md` và báo cho giảng viên.
 - **Dữ liệu thiếu hoặc sai định dạng khi đọc CSV:** Đọc `logix_requests.csv` với `keep_default_na=False` để ô trống ở `quyet_dinh_xem_lai` không bị chuyển thành `NaN`.
 
 ## 6. Tổng hợp đóng góp
@@ -44,8 +45,10 @@ Chi tiết đóng góp của từng thành viên nằm trong `TEAM.md`.
 - Cần sớm triển khai kiểm tra mẫu định kỳ (`audit_sample_checked`) để phát hiện các lỗi ngầm như sai bảng giá trong bộ nhớ đệm hoặc lỗi thừa chi phí token theo depot.
 - Tiếp tục cập nhật bảng đồng thuận nhãn sau khi ghép bộ nhãn của Người 2 và hoàn thiện số liệu chi phí/cỡ mẫu từ Người 1 và Người 2 trước giờ duyệt chéo 17:00.
 
+- Mẫu 1.200 yêu cầu chỉ đến từ 20 nhân viên ở 6 depot, trong khi pilot dùng cả 40 nhân viên (20 + 20) và không còn người dự phòng; nếu một người nghỉ thì chỉ còn 19 cụm ở một nhóm.
+
 ## 8. Tài liệu tham khảo
 
 - Đề bài và hướng dẫn buổi chiều Lab 13 (`docs/Ngay13_Lab13_De_bai_hoc_vien.docx`, `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`).
 - Tài liệu dữ liệu và công thức chuẩn (`docs/du_lieu_va_cong_thuc.md`).
-- Quy định và thang chấm (`RULES.md`, `RUBRIC.md`, `PHAN_CONG.md`).
+- Quy định và thang chấm (`RULES.md`, `RUBRIC.md`).

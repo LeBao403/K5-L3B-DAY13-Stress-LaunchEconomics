@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 |        |      |       |        | Người viết code, người kiểm số (Người 1) |
-|   2 |        |      |       |        | Người gắn nhãn 1 (Người 2) |
+|   2 | Lê Quân Bảo | 2A202603888 |       | LeBao403 | Người gắn nhãn 1 (Người 2) |
 |   3 | Nguyễn Văn Hậu | 2A202603932 | nguyenhau230303@gmail.com | | Người gắn nhãn 2, kiêm giữ hồ sơ (Người 3) |
 
 Bốn vai của lab:
@@ -50,7 +50,7 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - (Người 1 điền sau khi hoàn thành)
 
-## Người 2 (HoVaTen-MSSV)
+## Người 2 (Lê Quân Bảo - 2A202603888)
 
 ### Phần việc phụ trách
 
@@ -58,11 +58,11 @@ Sao chép mục dưới đây cho từng thành viên.
 
 ### Đóng góp cụ thể
 
-- (Người 2 điền sau khi hoàn thành)
+- Viết `src/nhap_nguoi2.py` (cỡ mẫu hai tỉ lệ, hệ số thiết kế, cỡ mẫu hiệu dụng khi chia theo cụm, power) và đưa khối D1 vào `src/lab13.py`; điền `report/team/pilot_plan.yaml` (chia theo nhân viên 20 + 20, mức chênh 6 điểm, 3 luật dừng); tính ba chỉ số E1 và liệt kê 10 event có `trace_id` trong `report/team/chi_so.md`; gắn nhãn 20 ca lỗi trong `report/team/nhan_nguoi2.md`; điền dòng 4 và 6 của hồ sơ launch v0.
 
 ### Bằng chứng
 
-- (Người 2 điền sau khi hoàn thành)
+- Commit `790cd1e`; file `src/nhap_nguoi2.py`, `report/team/pilot_plan.yaml`, `report/team/chi_so.md` (mục E1), `report/team/nhan_nguoi2.md`, `report/team/2A202603888_LeQuanBao.md`.
 
 ## Người 3 (NguyenVanHau-2A202603932)
 
