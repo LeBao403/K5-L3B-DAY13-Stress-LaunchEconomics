@@ -56,5 +56,6 @@ pilot:
     - "NẾU tỉ lệ nhân viên bỏ qua gợi ý (sua hoặc bo) vượt 40% TRONG 1 tuần THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên trong 3 ngày để tìm nguyên nhân KHÔNG THÌ không được chuyển sang bước rollout tiếp theo"
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
   rollback: "Giám đốc vận hành bấm cờ tắt, hiệu lực trong 30 phút; khách được phục vụ bằng luồng nhân viên tự làm 6 phút mỗi yêu cầu"
+  start_date: "2026-12-07"        # thứ Hai; ba tuần rollout đến hết 2026-12-27, thêm 7 ngày theo dõi mở lại đến 2027-01-03
   decision_date: "2027-01-05"     # chốt trước ngày bắt đầu; ba tuần rollout cộng 7 ngày theo dõi mở lại
   simulated_inputs: ["phut_xem_lai_simulated", "phut_lam_lai_simulated", "chi phí mỗi việc thành công theo loại và so với 12.000 đ (tính từ hai cột trên)", "ngưỡng chi phí 8.000 đ"]
