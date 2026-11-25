@@ -4,29 +4,34 @@ Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các fil
 
 ## 1. Thông tin nhóm
 
-- Tên nhóm:
-- Lớp:
+- Tên nhóm: Stress
+- Lớp: L3B
 - Thành viên: xem `TEAM.md`
 
 ## 2. Mục tiêu và cách tiếp cận
 
-...
+Đánh giá tính khả thi kinh tế, phân loại lỗi và thiết kế kế hoạch chạy thử nghiệm (pilot Gate 2a) cho trợ lý hoàn phí LogiX-VN từ dữ liệu mẫu 1.200 yêu cầu và 1.624 lần chạy (`logix_requests.csv`, `logix_runs.csv`). Nhóm chia 3 người phối hợp song song các phần độc lập trước khi ghép vào hồ sơ launch v0: Người 1 xây dựng mô hình chi phí (A, B1–B3, E2), Người 2 thiết kế pilot và bộ chỉ số/event (D, E1, gắn nhãn 1), Người 3 tính toán kịch bản B4, gắn nhãn độc lập 20 ca lỗi (C), lập bảng khắc phục và giữ hồ sơ tổng hợp.
 
 ## 3. Giải pháp
 
-Tóm tắt cách nhóm làm từng nhiệm vụ A–E và link tới file hồ sơ tương ứng.
-
-...
+- **Nhiệm vụ A & B1–B3 (Mô hình chi phí & độ nhạy):** Xem `src/lab13.py` và `report/team/bang_chi_phi.md` (Người 1 hoàn thiện).
+- **Nhiệm vụ B4 (Xem lại 100% phạm vi `noi_dia` + `hang_nang`):** Viết `src/nhap_nguoi3.py` tính từ dữ liệu thô trên 982 yêu cầu (900 việc thành công, 948 yêu cầu có `ok`, 48 ca `lam_lai`), đối chiếu giả định 9 phút làm lại với cột `phut_lam_lai_simulated` và tính ngưỡng xem lại hoà vốn (`report/team/bang_chi_phi.md`).
+- **Nhiệm vụ C (Bảng lỗi & cách khắc phục):** Gắn nhãn độc lập 20 ca lỗi theo 5 loại Google PAIR (`report/team/nhan_nguoi3.md`, chờ so với `nhan_nguoi2.md`), xây dựng bảng khắc phục đo được cho 5 ca đại diện (ca 9, 7, 18, 4, 17) trong `report/team/bang_loi.md`.
+- **Nhiệm vụ D & E1–E2 (Pilot plan, chỉ số & rủi ro):** Xem `report/team/pilot_plan.yaml` và `report/team/chi_so.md` (Người 2 và Người 1 hoàn thiện).
+- **Nhiệm vụ E3 & duyệt chéo:** Tổng hợp tại `report/team/ho_so_launch_v0.md` và `report/team/phieu_cham.md`.
 
 ## 4. Kết quả
 
-Con số chính (ghi nhãn `simulated` khi cần) và đề xuất cuối của `ho_so_launch_v0.md`. Kết quả duyệt chéo nhóm nhận được từ hội đồng.
-
-...
+- **Kết quả B4 (`noi_dia` + `hang_nang`, `simulated`):** Chi phí mỗi việc thành công khi xem lại 100% là **11.743 đ = 0,98×** của 12.000 đ (giả định 9 phút làm lại, `simulated`); tăng lên **12.415 đ = 1,03×** theo trung bình toàn mẫu 15,30 phút/ca hoặc **12.516 đ = 1,04×** theo thực tế trong phạm vi 16,25 phút/ca (`simulated`). Ngưỡng xem lại hoà vốn là **≤ 5,12 phút/lần** (hoặc **≤ 4,80 phút/lần** với 15,30 phút làm lại, `simulated`).
+- **Kết quả C:** 20 ca lỗi đã được Người 3 phân loại độc lập thành 4 ca Do người dùng, 5 ca Hệ thống, 4 ca Ngữ cảnh, 4 ca Giới hạn hệ thống, 3 ca Ngầm (chờ đối chiếu tỉ lệ đồng thuận với Người 2); 5 ca khắc phục đại diện có đầy đủ event gắn `trace_id`, ngưỡng định lượng và chức danh phụ trách.
+- **Kết quả A, B1–B3, D, E1–E2 & kết quả duyệt chéo hội đồng:** (Cập nhật sau khi Người 1, Người 2 hoàn thiện phần số liệu và kết thúc phiên duyệt chéo Gate 2a).
+- **Đề xuất dự thảo (`ho_so_launch_v0.md`):** **Go có điều kiện** cho phạm vi `noi_dia` + `hang_nang` với 4 điều kiện có chức danh và hạn kiểm tra rõ ràng.
 
 ## 5. Khó khăn và cách xử lý
 
-...
+- **Rủi ro thiên lệch từ dữ liệu giả lập:** Hai cột `phut_xem_lai_simulated` và `phut_lam_lai_simulated` là số giả lập; đặc biệt thời gian làm lại thực tế trong dữ liệu (`15,30 phút/ca` toàn mẫu, `16,25 phút/ca` trong phạm vi `noi_dia` + `hang_nang`) cao hơn mức giả định 9 phút của đề bài, làm thay đổi kết luận B4 từ 0,98× sang 1,03×–1,04×. **Cách xử lý:** Gắn nhãn `simulated` ở mọi số suy ra, báo cáo cả hai kịch bản và đưa yêu cầu đo thời gian thật sau tuần 1 vào điều kiện Go.
+- **Phối hợp song song 3 thành viên tránh xung đột git:** Phân tách file sở hữu và file nháp riêng (`src/nhap_nguoi3.py`, `report/team/nhan_nguoi3.md`), giữ nguyên các mục của Người 1 và Người 2, tuân thủ `git pull --rebase` trước khi đẩy bài.
+- **Dữ liệu thiếu hoặc sai định dạng khi đọc CSV:** Đọc `logix_requests.csv` với `keep_default_na=False` để ô trống ở `quyet_dinh_xem_lai` không bị chuyển thành `NaN`.
 
 ## 6. Tổng hợp đóng góp
 
@@ -34,8 +39,12 @@ Chi tiết đóng góp của từng thành viên nằm trong `TEAM.md`.
 
 ## 7. Hạn chế và hướng cải thiện
 
-...
+- Thời gian xem lại và làm lại hiện tại vẫn là dữ liệu `simulated`; cần thu thập đầy đủ sự kiện đo thật (`staff_review_decision`, `staff_rework_completed`) gắn `trace_id` trong tuần 1 của pilot.
+- Cần sớm triển khai kiểm tra mẫu định kỳ (`audit_sample_checked`) để phát hiện các lỗi ngầm như sai bảng giá trong bộ nhớ đệm hoặc lỗi thừa chi phí token theo depot.
+- Tiếp tục cập nhật bảng đồng thuận nhãn sau khi ghép bộ nhãn của Người 2 và hoàn thiện số liệu chi phí/cỡ mẫu từ Người 1 và Người 2 trước giờ duyệt chéo 17:00.
 
 ## 8. Tài liệu tham khảo
 
-...
+- Đề bài và hướng dẫn buổi chiều Lab 13 (`docs/Ngay13_Lab13_De_bai_hoc_vien.docx`, `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`).
+- Tài liệu dữ liệu và công thức chuẩn (`docs/du_lieu_va_cong_thuc.md`).
+- Quy định và thang chấm (`RULES.md`, `RUBRIC.md`, `PHAN_CONG.md`).
