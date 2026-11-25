@@ -13,7 +13,7 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 |        |      |       |        | Người viết code, người kiểm số (Người 1) |
 |   2 |        |      |       |        | Người gắn nhãn 1 (Người 2) |
-|   3 |        |      |       |        | Người gắn nhãn 2, kiêm giữ hồ sơ (Người 3) |
+|   3 | Nguyễn Văn Hậu | 2A202603932 | nguyenhau230303@gmail.com | | Người gắn nhãn 2, kiêm giữ hồ sơ (Người 3) |
 
 Bốn vai của lab:
 
@@ -64,7 +64,7 @@ Sao chép mục dưới đây cho từng thành viên.
 
 - (Người 2 điền sau khi hoàn thành)
 
-## Người 3 (HoVaTen-MSSV)
+## Người 3 (NguyenVanHau-2A202603932)
 
 ### Phần việc phụ trách
 

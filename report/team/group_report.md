@@ -22,10 +22,11 @@ Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các fil
 
 ## 4. Kết quả
 
+- **Kết quả A & B1–B3 (`bang_chi_phi.md`, `simulated`):** Chi phí mỗi việc thành công là **4.472 đ** (`simulated`, gấp 16,3 lần hoá đơn 274,7 đ/yêu cầu; 978 việc thành công); chi phí cả hệ thống là **5.865 đ/yêu cầu = 0,49×** của 12.000 đ (`simulated`). Ba yếu tố nhạy nhất: số ca làm lại (+51,8%), tỉ lệ xem lại (+40,7%), lương nhân viên (+23,1%). Giới hạn chạy lại 2 lần rẻ nhất cho cả hệ thống (**6.901.220 đ**, `simulated`). Phạm vi `noi_dia` (2.696 đ = 0,22×) và `hang_nang` (8.221 đ = 0,69×) khả thi, còn `quoc_te` (22.515 đ = 1,88×, `simulated`) không đáng xử lý.
 - **Kết quả B4 (`noi_dia` + `hang_nang`, `simulated`):** Chi phí mỗi việc thành công khi xem lại 100% là **11.743 đ = 0,98×** của 12.000 đ (giả định 9 phút làm lại, `simulated`); tăng lên **12.415 đ = 1,03×** theo trung bình toàn mẫu 15,30 phút/ca hoặc **12.516 đ = 1,04×** theo thực tế trong phạm vi 16,25 phút/ca (`simulated`). Ngưỡng xem lại hoà vốn là **≤ 5,12 phút/lần** (hoặc **≤ 4,80 phút/lần** với 15,30 phút làm lại, `simulated`).
-- **Kết quả C:** 20 ca lỗi đã được Người 3 phân loại độc lập thành 4 ca Do người dùng, 5 ca Hệ thống, 4 ca Ngữ cảnh, 4 ca Giới hạn hệ thống, 3 ca Ngầm (chờ đối chiếu tỉ lệ đồng thuận với Người 2); 5 ca khắc phục đại diện có đầy đủ event gắn `trace_id`, ngưỡng định lượng và chức danh phụ trách.
-- **Kết quả A, B1–B3, D, E1–E2 & kết quả duyệt chéo hội đồng:** (Cập nhật sau khi Người 1, Người 2 hoàn thiện phần số liệu và kết thúc phiên duyệt chéo Gate 2a).
-- **Đề xuất dự thảo (`ho_so_launch_v0.md`):** **Go có điều kiện** cho phạm vi `noi_dia` + `hang_nang` với 4 điều kiện có chức danh và hạn kiểm tra rõ ràng.
+- **Kết quả C (`bang_loi.md`):** Hai bộ nhãn độc lập (`nhan_nguoi2.md` của Lê Quân Bảo và `nhan_nguoi3.md` của Người 3) đạt **đồng thuận 20/20 = 100%** (4 Do người dùng, 5 Hệ thống, 4 Ngữ cảnh, 4 Giới hạn hệ thống, 3 Ngầm); 5 ca khắc phục đại diện (ca 9, 7, 18, 4, 17) có đầy đủ event gắn `trace_id`, ngưỡng định lượng và chức danh phụ trách.
+- **Kết quả D & E1–E2 (`pilot_plan.yaml`, `chi_so.md`):** Pilot chia theo nhân viên `20 + 20`, MDE +6 điểm (859 yêu cầu/nhóm, DE = 6,96; power ~0,64 nếu tác động thật +5 điểm), 3 luật dừng đủ 4 vế. Đợt chạy thử ghi nhận chỉ số chính **82,83%**, bỏ qua gợi ý **27,12%**, mở lại 7 ngày **4,25%** (3,97% trong phạm vi).
+- **Đề xuất (`ho_so_launch_v0.md`):** **Go có điều kiện** cho phạm vi `noi_dia` + `hang_nang` với 4 điều kiện có chức danh và hạn kiểm tra rõ ràng. *(Kết quả duyệt chéo Gate 2a sẽ cập nhật sau phiên 17:00.)*
 
 ## 5. Khó khăn và cách xử lý
 
